@@ -29,3 +29,16 @@ def univ_list(request):
 class UniversitiesListView(generic.ListView):
     model = Univ
     paginate_by = 10
+
+
+class UniversityDetailView(generic.DetailView):
+    model = Univ
+
+
+class SubjectsListView(generic.ListView):
+    model = Subject
+    paginate_by = 10
+
+
+class SubjectDetailView(generic.DetailView):
+    model = Subject

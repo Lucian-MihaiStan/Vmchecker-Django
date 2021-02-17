@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-
+from django.urls import reverse
 
 # Create your models here.
 
@@ -23,7 +23,13 @@ class Subject(models.Model):
     description = models.TextField(blank=True)
 
     homework_list = models.ManyToManyField(Homework)
-    
+
+    class Meta:
+        ordering = ['subject_name']
+
+    def get_absolute_url(self):
+        return reverse('subject-detail', args=[str(self.id)])
+
     def __str__(self):
         return "Subject \n" + str(self.subject_name) + "\nWith description: \n" + str(self.description)
 
@@ -55,6 +61,9 @@ class Univ(models.Model):
 
     def __str__(self):
         return "University " + str(self.univ_name)
+
+    def get_absolute_url(self):
+        return reverse('university-detail', args=[str(self.id)])
 
 
 class UnivInstance(models.Model):
