@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Universities List</h1>
+
+    <p>A short list of universities</p>
+
+    {% if univ_list %}
+        {% for univ in univ_list %}
+        <li>
+            <a href="{{ univ.get_absolute_url }}">{{ univ.univ_name }}</a>
+        </li>
+        {% endfor %}
+    {% else %}
+        <p>There are no univ in the list</p>
+    {% endif %}
+{% endblock %}
