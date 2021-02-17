@@ -2,6 +2,18 @@
 
 {% block content %}
 
-<h1>{{subject.subject_name}}</h1>
+<h1>{{ subject.subject_name }}</h1>
+<p>{{ subject.description }}</p>
+<p><strong>Homework List:</strong></p>
+
+{% if subject.homework_list %}
+    {% for homework in subject.homework_list.all %}
+    <li>
+        <a href="{{ homework.get_absolute_url }}"> {{ homework.homework_name }} </a>
+    </li>
+    {% endfor %}
+{% else %}
+    <p>There is no homework for this subject</p>
+{% endif %}
 
 {% endblock %}

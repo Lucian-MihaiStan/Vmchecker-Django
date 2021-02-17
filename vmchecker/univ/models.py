@@ -2,12 +2,19 @@ import uuid
 from django.db import models
 from django.urls import reverse
 
+
 # Create your models here.
 
 
 class Homework(models.Model):
     homework_name = models.CharField(max_length=200)
     text_homework = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ['homework_name']
+
+    def get_absolute_url(self):
+        return reverse('homework-detail', args=[str(self.id)])
 
     def __str__(self):
         return "\n" + str(self.homework_name) + " with text " + str(self.text_homework) + "\n"
@@ -21,7 +28,6 @@ class HomeworkInstance(models.Model):
 class Subject(models.Model):
     subject_name = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-
     homework_list = models.ManyToManyField(Homework)
 
     class Meta:

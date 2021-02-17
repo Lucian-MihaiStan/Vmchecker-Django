@@ -42,3 +42,12 @@ class SubjectsListView(generic.ListView):
 
 class SubjectDetailView(generic.DetailView):
     model = Subject
+
+
+class HomeworkListView(generic.ListView):
+    model = Homework
+    paginate_by = 10
+
+
+class HomeworkDetailView(generic.DetailView):
+    model = Homework
