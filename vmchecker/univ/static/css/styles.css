@@ -1,0 +1,123 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(46, 46, 46);
+    height: 100%;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.col-sm-2 {
+    max-width: 200px;
+    background: #000000;
+    margin: 40px auto;
+    padding: 10px 0px 20px 0px;
+    border: 1px solid #111;
+    border-radius: 10px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.75);
+}
+
+.link {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 90%;
+    margin-left: 5%;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.sidebar-link {
+    color: #ffffff;
+}
+
+.sidebar-link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    bottom: 50%;
+    left: -100%;
+    transition-delay: 0.5s;
+    transition: all 0.5s;
+}
+
+.link:hover:after,
+.link.hover:after {
+    left: 100%;
+}
+
+.link .text {
+    text-shadow: 0px -40px 0px rgba(255, 255, 255, 1);
+    transition: all 0.75s;
+    transform: translateY(100%) translateZ(0);
+    transition-delay: 0.25s;
+}
+
+.link:hover .text,
+.link.hover .text {
+    text-shadow: 0px -40px 0px rgba(255, 255, 255, 0);
+    transform: translateY(0%) translateZ(0) scale(1.1);
+    font-weight: 600;
+}
+
+/*page index*/
+
+.title-index-page {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: 900;
+    background-color: #000000;
+    color: #ffffff;
+    display: block;
+    border-radius: 10px;
+    padding: .5em;
+}
+
+h1:nth-child(2) {
+    position: absolute;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    clip-path: inset(-1% -1% 50% -1%);
+/ / Added the negative values to prevent icky "bleed" in Chrome
+}
+
+.all-text {
+    position: relative;
+    top: 10%;
+    left: 0;
+    color: #ffffff;
+}

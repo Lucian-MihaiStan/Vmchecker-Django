@@ -8,25 +8,29 @@
           crossorigin="anonymous"
     >
     <title>VmChecker</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-2">
-                {% block sidebar %}
-                    <ul>
-                        <li><a href="{% url 'universities' %}">Home</a></li>
-                        <li><a href="{% url 'universities' %}">All universities</a></li>
-                        <li><a>All Subjects</a></li>
-                        <li><a>List of Homework</a></li>
-                    </ul>
-                {% endblock %}
-            </div>
-            <div class="col-sm-10">
-                {% block content %}
-                {% endblock %}
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            {% block sidebar %}
+            <ul class="sidebar-nav">
+                <li class="link"><a class="sidebar-link" href="{% url 'index' %}">Home</a></li>
+                <li class="link"><a class="sidebar-link" href="{% url 'universities' %}">All universities</a></li>
+                <li class="link"><a class="sidebar-link">All Subjects</a></li>
+                <li class="link"><a class="sidebar-link">List of Homework</a></li>
+            </ul>
+            {% endblock %}
+        </div>
+        <div class="col-sm-10">
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
+</div>
 </body>
 </html>
