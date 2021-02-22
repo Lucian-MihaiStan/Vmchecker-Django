@@ -88,7 +88,7 @@
 }
 
 .tilesWrap li:hover h2 {
-    top: 0px;
+    top: 0;
     opacity: 0.6;
 }
 
@@ -136,4 +136,21 @@
     background: #FC354C;
     background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
     background: linear-gradient(to right, #0ABFBC, #FC354C);
+}
+
+.years {
+    position: absolute;
+    top: 45%;
+    font-size: 200%;
+    left: 41.7%;
+}
+
+.content-years {
+    position: absolute;
+    align-content: center;
+    justify-content: center;
+    place-content: center;
+    top: 50%;
+    left: 10%;
+    color: #ffffff;
 }
