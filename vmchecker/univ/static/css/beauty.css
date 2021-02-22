@@ -89,21 +89,30 @@ html, body {
     flex-direction: column;
 }
 
+.logo {
+    position: absolute;
+    left: 20%;
+    top: 3%;
+    width: 5%;
+    height: 10%;
+}
+
 .title-box {
     position: relative;
+    left: 15%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 h1 {
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 900;
     background-color: #000000;
     color: #ffffff;
     display: block;
     border-radius: 10px;
-    padding: .5em;
+    padding: .2em;
 }
 
 h1:nth-child(2) {
@@ -112,12 +121,17 @@ h1:nth-child(2) {
     color: #000000;
     border-radius: 10px;
     clip-path: inset(-1% -1% 50% -1%);
-/ / Added the negative values to prevent icky "bleed" in Chrome
 }
 
 .all-text {
     position: relative;
     top: 10%;
     left: 0;
+    color: #ffffff;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
     color: #ffffff;
 }

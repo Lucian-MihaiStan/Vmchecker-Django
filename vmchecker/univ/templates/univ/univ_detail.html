@@ -1,25 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{univ.univ_name}}</h1>
+<div class="title-index-page">
 
-<p><strong>Years:</strong></p>
-{% if univ.years %}
+    <div class="title-box">
+        <h1>{{univ.univ_name.upper}}</h1>
+        <h1>{{univ.univ_name.upper}}</h1>
+    </div>
+</div>
+
+<div class="content">
+
+    <p><strong>Years:</strong></p>
+    {% if univ.years %}
     {% for year in univ.years.all %}
     <li>
         <a> {{ year.year_count }}</a>
         <p><strong>Subjects: </strong></p>
         {% for subject in year.subjects.all %}
-        <li>
-            <a href="{{ subject.get_absolute_url }}"> {{ subject.subject_name }} </a>
-        </li>
-        {% endfor %}
+    <li>
+        <a href="{{ subject.get_absolute_url }}"> {{ subject.subject_name }} </a>
     </li>
     {% endfor %}
-{% else %}
+    </li>
+    {% endfor %}
+    {% else %}
     <p>There are no years created for this university</p>
-{% endif %}
+    {% endif %}
 
-<!--<a href="https://www.google.com">{{ univ.years.all|join:", " }}</a>-->
+    <!--<a href="https://www.google.com">{{ univ.years.all|join:", " }}</a>-->
 
-{% endblock %}
+    {% endblock %}
+</div>

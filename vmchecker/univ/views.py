@@ -7,11 +7,11 @@ from django.views import generic
 
 
 def index(request):
-    num_books = Univ.objects.all().count()
+    num_univ = Univ.objects.all().count()
     num_instance = UnivInstance.objects.all().count()
 
     context = {
-        'num_books': num_books,
+        'num_univ': num_univ,
         'num_instance': num_instance
     }
 

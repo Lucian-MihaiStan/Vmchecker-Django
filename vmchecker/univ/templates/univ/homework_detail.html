@@ -2,9 +2,19 @@
 
 {% block content %}
 
-<h1>{{ homework.homework_name}}</h1>
+<div class="title-index-page">
+    <div class="title-box">
+        <h1>{{ homework.homework_name.upper }}</h1>
+        <h1>{{ homework.homework_name.upper }}</h1>
+    </div>
 
-<p>{{ homework.text_homework }}</p>
+</div>
+
+
+<div class="content">
+    <p>{{ homework.text_homework }}</p>
+
+</div>
 
 
 {% endblock %}

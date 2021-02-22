@@ -59,7 +59,7 @@ class YearInstance(models.Model):
 
 
 class Univ(models.Model):
-    univ_name = models.CharField(max_length=30)
+    univ_name = models.CharField(max_length=50)
     years = models.ManyToManyField(Year)
 
     class Meta:
