@@ -52,6 +52,12 @@ class Year(models.Model):
     def __str__(self):
         return str(self.year_count)
 
+    def getId(self):
+        return str(self.year_count[:1])
+
+    def getName(self):
+        return str(self.year_count[2:])
+
 
 class YearInstance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="Unique ID for this particular year")

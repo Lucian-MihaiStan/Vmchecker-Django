@@ -28,7 +28,7 @@ def univ_list(request):
 
 class UniversitiesListView(generic.ListView):
     model = Univ
-    paginate_by = 10
+    paginate_by = 20
 
 
 class UniversityDetailView(generic.DetailView):
@@ -37,7 +37,7 @@ class UniversityDetailView(generic.DetailView):
 
 class SubjectsListView(generic.ListView):
     model = Subject
-    paginate_by = 10
+    paginate_by = 20
 
 
 class SubjectDetailView(generic.DetailView):
@@ -46,7 +46,7 @@ class SubjectDetailView(generic.DetailView):
 
 class HomeworkListView(generic.ListView):
     model = Homework
-    paginate_by = 10
+    paginate_by = 20
 
 
 class HomeworkDetailView(generic.DetailView):

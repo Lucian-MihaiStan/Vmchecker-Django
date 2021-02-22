@@ -10,7 +10,7 @@
 
 .items {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    border-top: 10px solid #0B5AA2;
+    border-top: 10px solid #000000;
 }
 
 .items-head p {
@@ -21,10 +21,12 @@
     font-size: 20px;
 }
 
-.univ-name a:link, a:visited, a:hover, a:active{
+.univ-name a:link, a:visited, a:active, a:hover {
     font-size: 15px;
     color: white;
     text-decoration: none;
+    transition: transform .5s;
+    margin: 0 auto;
 }
 
 .items-head hr {
@@ -38,6 +40,8 @@
     margin: 10px;
     display: grid;
     grid-gap: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 .items-body-content {
