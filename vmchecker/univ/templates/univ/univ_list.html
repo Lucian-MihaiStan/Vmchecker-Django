@@ -6,17 +6,23 @@
         <h1>UNIVERSITIES LIST</h1>
         <h1>UNIVERSITIES LIST</h1>
     </div>
-    <div class="items-body">
-        <div class="">
-            {% if univ_list %}
-            {% for univ in univ_list %}
-            <li class="">
-                <a href="{{ univ.get_absolute_url }}">{{ univ.univ_name }}</a>
-            </li>
-            {% endfor %}
-            {% else %}
-            <p>There are no univ in the list</p>
-            {% endif %}
+
+    <div class="container">
+        <div class="items">
+            <div class="items-body">
+                {% if univ_list %}
+                {% for univ in univ_list %}
+                <div class="items-body-content">
+                    <span class="univ-name">
+                        <a href="{{ univ.get_absolute_url }}">{{ univ.univ_name }}</a>
+                    </span>
+                    <i class="fa fa-angle-right"></i>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>There are no univ in the list</p>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

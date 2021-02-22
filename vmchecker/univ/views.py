@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Univ, UnivInstance, Homework, Subject, Year
+from .models import Univ, UnivInstance, Homework, Subject
 from django.views import generic
 
 

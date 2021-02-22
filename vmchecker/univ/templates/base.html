@@ -10,8 +10,10 @@
     <title>VmChecker</title>
 
     {% load static %}
+    <script src="{% static 'css/code.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/beauty.css' %}">
     <link rel="stylesheet" href="{% static 'css/univlist.css' %}">
+
 
 </head>
 <body>
@@ -20,10 +22,10 @@
         <div class="col-sm-2">
             {% block sidebar %}
             <ul class="sidebar-nav">
-                <li class="link"><a class="sidebar-link" href="{% url 'index' %}">Home</a></li>
-                <li class="link"><a class="sidebar-link" href="{% url 'universities' %}">All universities</a></li>
-                <li class="link"><a class="sidebar-link">All Subjects</a></li>
-                <li class="link"><a class="sidebar-link">List of Homework</a></li>
+                <li class="link"><div class="text"><a class="sidebar-link" href="{% url 'index' %}">Home</a></div></li>
+                <li class="link"><div class="text"><a class="sidebar-link" href="{% url 'universities' %}">All universities</a></div></li>
+                <li class="link"><div class="text"><a class="sidebar-link">All Subjects</a></div></li>
+                <li class="link"><div class="text"><a class="sidebar-link">List of Homework</a></div></li>
             </ul>
             {% endblock %}
         </div>
