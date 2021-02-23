@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 
+{% block additional_styles %}
+<style>
+    body {
+        background-image: url("../../static/photos/blackboard.jpg");
+    }
+</style>
+{% endblock %}
+
+
+<!--{% block bg %}-->
+<!--    background = "../../static/photos/blackboard.jpg"-->
+<!--{% endblock %}-->
+
 {% block content %}
 <div class="title-index-page">
     <div class="title-box">
@@ -27,3 +40,4 @@
 
     {% endblock %}
 </div>
+
