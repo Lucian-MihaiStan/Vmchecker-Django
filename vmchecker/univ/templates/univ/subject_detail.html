@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block additional_styles %}
 <style>
     body {
@@ -17,20 +16,32 @@
 </div>
 
 <div class="content">
-    <p>{{ subject.description }}</p>
+    <div class="subject-detail btn">
+        <span class="text noSelect">{{ subject.description }}</span>
+    </div>
+
+    <br>
+
     <p><strong>Homework List:</strong></p>
 
-    {% if subject.homework_list %}
-    {% for homework in subject.homework_list.all %}
-    <li>
-        <a href="{{ homework.get_absolute_url }}"> {{ homework.homework_name }} </a>
-    </li>
-    {% endfor %}
-    {% else %}
-    <p>There is no homework for this subject</p>
-    {% endif %}
+    <div class="items">
+        <div class="items-body">
+            {% if subject.homework_list %}
+            {% for homework in subject.homework_list.all %}
+            <div class="items-body-content">
+                <span class="univ-name">
+                    <a href="{{ homework.get_absolute_url }}"> {{ homework.homework_name }} </a>
+                </span>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>There is no homework for this subject</p>
+            {% endif %}
+        </div>
+    </div>
 
-    {% endblock %}
 
 </div>
+{% endblock %}
+
 

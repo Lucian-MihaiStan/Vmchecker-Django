@@ -15,6 +15,13 @@
     top: 50%;
 }
 
+.subject-detail {
+    position: relative;
+    left: 2%;
+    color: #ffffff;
+    width: 85%;
+}
+
 .text {
     transition: transform .5s;
     margin: 0 auto;
