@@ -1,27 +1,37 @@
 {% extends "base.html" %}
 
+{% block additional_styles %}
+<style>
+    body {
+        background-image: url("../../static/photos/blackboard.jpg");
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+
 <div class="title-index-page">
     <div class="title-box">
-        <h1>Universities list</h1>
+        <h1>
+            {{ year.getFullUniversityYearName.upper }}
+        </h1>
     </div>
 
     <div class="container">
         <div class="items">
             <div class="items-body">
-                {% if univ_list %}
-                {% for univ in univ_list %}
+                {% for subject in year.subjects.all %}
                 <div class="items-body-content">
                     <span class="univ-name">
-                        <a href="{{ univ.get_absolute_url }}">{{ univ.univ_name }}</a>
+                        <a href="{{ subject.get_absolute_url }}">{{ subject.subject_name }}</a>
                     </span>
                 </div>
                 {% endfor %}
-                {% else %}
-                    <p>There are no univ in the list</p>
-                {% endif %}
             </div>
+
         </div>
     </div>
+
 </div>
+
 {% endblock %}

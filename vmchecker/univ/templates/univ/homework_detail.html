@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
+{% block additional_styles %}
+<style>
+    body {
+        background-image: url("../../static/photos/blackboard.jpg");
+    }
+</style>
+{% endblock %}
+
 {% block content %}
 
 <div class="title-index-page">
     <div class="title-box">
-        <h1>{{ homework.homework_name.upper }}</h1>
         <h1>{{ homework.homework_name.upper }}</h1>
     </div>
 

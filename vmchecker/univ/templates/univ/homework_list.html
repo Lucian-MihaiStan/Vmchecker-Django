@@ -1,27 +1,38 @@
 {% extends "base.html" %}
 
+{% block additional_styles %}
+<style>
+    body {
+        background-image: url("../../static/photos/blackboard.jpg");
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
+
 <div class="title-index-page">
     <div class="title-box">
-        <h1>Universities list</h1>
+        <h1> Homework list</h1>
     </div>
 
     <div class="container">
         <div class="items">
             <div class="items-body">
-                {% if univ_list %}
-                {% for univ in univ_list %}
+                {% if homework_list %}
+                {% for homework in homework_list %}
                 <div class="items-body-content">
                     <span class="univ-name">
-                        <a href="{{ univ.get_absolute_url }}">{{ univ.univ_name }}</a>
+                        <a href="{{ homework.get_absolute_url }}"> {{ homework.homework_name }} </a>
                     </span>
                 </div>
                 {% endfor %}
                 {% else %}
-                    <p>There are no univ in the list</p>
+                <p> There are no homework in the list</p>
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

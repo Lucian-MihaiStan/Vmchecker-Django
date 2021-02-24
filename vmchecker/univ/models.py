@@ -48,6 +48,7 @@ class SubjectInstance(models.Model):
 class Year(models.Model):
     year_count = models.CharField(max_length=200)
     subjects = models.ManyToManyField(Subject)
+    year_introduction = models.CharField(max_length=200)
 
     def __str__(self):
         return str(self.year_count)
@@ -57,6 +58,19 @@ class Year(models.Model):
 
     def getName(self):
         return str(self.year_count[2:])
+
+    def get_absolute_url(self):
+        return reverse('year-detail', args=[str(self.id)])
+
+    def getFullUniversityYearName(self):
+        year = self.getId()
+        name = self.getName()
+        dictionary = {
+            'CTI': 'Automatica si calculatoare',
+            'IS': 'Ingineria sistemelor',
+            'IE': 'Inginerie electrica'
+        }
+        return dictionary.get(name) + ' Year ' + year
 
 
 class YearInstance(models.Model):

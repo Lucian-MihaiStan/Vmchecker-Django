@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Univ, UnivInstance, Homework, Subject
+from .models import Univ, UnivInstance, Homework, Subject, Year
 from django.views import generic
 
 
@@ -37,7 +37,7 @@ class UniversityDetailView(generic.DetailView):
 
 class SubjectsListView(generic.ListView):
     model = Subject
-    paginate_by = 20
+    paginate_by = 10
 
 
 class SubjectDetailView(generic.DetailView):
@@ -46,8 +46,12 @@ class SubjectDetailView(generic.DetailView):
 
 class HomeworkListView(generic.ListView):
     model = Homework
-    paginate_by = 20
+    paginate_by = 5
 
 
 class HomeworkDetailView(generic.DetailView):
     model = Homework
+
+
+class YearDetailView(generic.DetailView):
+    model = Year

@@ -8,11 +8,6 @@
 </style>
 {% endblock %}
 
-
-<!--{% block bg %}-->
-<!--    background = "../../static/photos/blackboard.jpg"-->
-<!--{% endblock %}-->
-
 {% block content %}
 <div class="title-index-page">
     <div class="title-box">
@@ -28,8 +23,10 @@
         <li>
             <h2> {{ year.getId }}</h2>
             <h3> {{ year.getName }} </h3>
-            <p> Info for this year </p>
-            <button> Homework</button>
+            <p> {{ year.year_introduction }} </p>
+            <button onclick="window.location.href='{{ year.get_absolute_url }}'">
+                Subjects
+            </button>
         </li>
         {% endfor %}
     </ul>
